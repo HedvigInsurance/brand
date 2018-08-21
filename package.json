@@ -1,0 +1,16 @@
+{
+  "name": "@hedviginsurance/brand",
+  "version": "1.0.0",
+  "description": "The hedvig brand package",
+  "main": "dist/index.js",
+  "repository": "git@github.com:HedvigInsurance/brand.git",
+  "author": "Sam Pettersson <sam@hedvig.com>",
+  "license": "AGPL-3.0",
+  "private": false,
+  "devDependencies": {
+    "typescript": "^3.0.1"
+  },
+  "scripts": {
+    "prepublishOnly": "tsc"
+  }
+}
