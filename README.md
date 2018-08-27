@@ -14,3 +14,10 @@ yarn add @hedviginsurance/brand
   
   colors.GREEN // etc
 ```
+
+### Fonts
+```javascript
+  import { fonts } from '@hedviginsurance/brand'
+
+  fonts.SORAY
+````
