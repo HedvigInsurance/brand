@@ -1,5 +1,5 @@
 export const fonts = {
   MERRIWEATHER: "Merriweather-Light",
-  CIRCULAR: "CircularStd-Book",
+  CIRCULAR: "CircularStd",
   SORAY: "SoRay"
 };
