@@ -1,19 +1,21 @@
-import {Platform} from 'react-primitives';
+import { Platform } from 'react-primitives';
 
-let fonts;
-
-if (Platform.OS === 'web') {
-  fonts = {
-    MERRIWEATHER: "Merriweather-Light",
-    CIRCULAR: "CircularStd",
-    SORAY: "SoRay"
-  }
-} else {
-  fonts = {
-    MERRIWEATHER: "Merriweather-Light",
-    CIRCULAR: 'CircularStd-Book',
-    SORAY: 'SoRay-ExtraBold'
-  }
+const nativeFonts = {
+  MERRIWEATHER: "Merriweather-Light",
+  CIRCULAR: 'CircularStd-Book',
+  SORAY: 'SoRay-ExtraBold'
 }
 
-export {fonts}
+const webFonts = {
+  MERRIWEATHER: "Merriweather-Light",
+  CIRCULAR: "CircularStd",
+  SORAY: "SoRay"
+}
+
+const fonts = Platform.select({
+  web: webFonts,
+  android: nativeFonts,
+  ios: nativeFonts
+})
+
+export { fonts }
