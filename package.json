@@ -11,7 +11,7 @@
     "typescript": "^3.0.1"
   },
   "scripts": {
-    "prepublishOnly": "tsc"
+    "prepublishOnly": "rm -rf dist && tsc"
   },
   "dependencies": {}
 }
