@@ -1,7 +1,7 @@
 import { Fonts } from "./types";
 
 const fonts: Fonts = {
-  MERRIWEATHER: 'Merriweather-Light',
+  MERRIWEATHER: 'Merriweather',
   CIRCULAR: 'CircularStd',
   SORAY: 'SoRay'
 }
