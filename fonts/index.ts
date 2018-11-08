@@ -13,7 +13,7 @@ interface Flavor {
   style: string
 }
 
-const fontFlavours: { [fontName: string]: Flavor[] } = {
+const fontFlavors: { [fontName: string]: Flavor[] } = {
   SoRay: [{ flavorName: 'ExtraBold', weight: 800, style: 'normal' }],
   CircularStd: [
     { flavorName: 'Bold', weight: 600, style: 'normal' },
@@ -31,8 +31,8 @@ const fontFlavours: { [fontName: string]: Flavor[] } = {
   ],
 }
 
-const getCdnFontFace = () => Object.keys(fontFlavours).map((fontName) =>
-  fontFlavours[fontName].map(
+const getCdnFontFaces = () => Object.keys(fontFlavors).map((fontName) =>
+  fontFlavors[fontName].map(
     (flavour) => `
   @font-face {
     font-family: "${fontName}";
@@ -49,4 +49,4 @@ const getCdnFontFace = () => Object.keys(fontFlavours).map((fontName) =>
 )
 .join('\n')
 
-export { fonts, getCdnFontFace }
+export { fonts, getCdnFontFaces }
