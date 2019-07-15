@@ -29,6 +29,11 @@ const fontFlavors: { [fontName: string]: Flavor[] } = {
     { flavorName: 'BoldItalic', weight: 600, style: 'italic' },
     { flavorName: 'Bold', weight: 600, style: 'normal' },
   ],
+  Geomanist: [
+    { flavorName: 'Black', weight: 900, style: 'normal' },
+    { flavorName: 'Bold', weight: 600, style: 'normal' },
+    { flavorName: 'Medium', weight: 500, style: 'normal' },
+  ]
 }
 
 const getCdnFontFaces = () => Object.keys(fontFlavors).map((fontName) =>
