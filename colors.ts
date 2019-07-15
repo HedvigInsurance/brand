@@ -13,5 +13,8 @@ export const colors = {
   OFF_WHITE: '#F9FAFC',
   GREEN: '#1BE9B6',
   PINK: '#FF8A80',
-  PINK_LIGHT: '#FFF3F2',
+  PINK_LIGHT: '#FFDCD9',
+  LIGHT_YELLOW: '#FAD80E',
+  DARK_YELLOW: '#DCBE0C',
+  DARK_GREEN: '#009175',
 }
