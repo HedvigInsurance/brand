@@ -1,9 +1,2 @@
-import { colors, colorsV2 } from './colors'
-import { fonts, getCdnFontFaces } from './fonts'
-
-export {
-  colors,
-  colorsV2,
-  fonts,
-  getCdnFontFaces
-}
+export { colors, colorsV2, colorsV3 } from './colors'
+export { fonts, getCdnFontFaces } from './fonts'

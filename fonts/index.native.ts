@@ -4,7 +4,9 @@ const fonts: Fonts = {
   MERRIWEATHER: 'Merriweather-Light',
   CIRCULAR: 'CircularStd-Book',
   SORAY: 'SoRay-ExtraBold',
-  GEOMANIST: 'Geomanist'
+  GEOMANIST: 'Geomanist',
+  EB_GARAMOND: 'EB Garamond',
+  FAVORIT: 'FavoritStd',
 }
 
 export { fonts }

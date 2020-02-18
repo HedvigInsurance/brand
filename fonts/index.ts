@@ -4,7 +4,9 @@ const fonts: Fonts = {
   MERRIWEATHER: 'Merriweather',
   CIRCULAR: 'CircularStd',
   SORAY: 'SoRay',
-  GEOMANIST: 'Geomanist'
+  GEOMANIST: 'Geomanist',
+  EB_GARAMOND: 'EB Garamond',
+  FAVORIT: 'FavoritStd',
 }
 
 
@@ -34,7 +36,12 @@ const fontFlavors: { [fontName: string]: Flavor[] } = {
     { flavorName: 'Black', weight: 900, style: 'normal' },
     { flavorName: 'Bold', weight: 600, style: 'normal' },
     { flavorName: 'Medium', weight: 500, style: 'normal' },
-  ]
+  ],
+  FavoritStd: [
+    { flavorName: 'Bold', weight: 600, style: 'normal'},
+    { flavorName: 'Book', weight: 400, style: 'normal'},
+    { flavorName: 'BookItalic', weight: 400, style: 'italic'},
+  ],
 }
 
 const getCdnFontFaces = () => Object.keys(fontFlavors).map((fontName) =>

@@ -66,3 +66,9 @@ export const colorsV2 = {
   offwhite: "#f9fafc",
   white: "#ffffff",
 }
+
+export const colorsV3 = {
+  black: '#121212',
+  black0: '#000000',
+  white: '#ffffff'
+}
