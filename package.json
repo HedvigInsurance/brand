@@ -1,6 +1,6 @@
 {
   "name": "@hedviginsurance/brand",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "The hedvig brand package",
   "main": "dist/index.js",
   "repository": "git@github.com:HedvigInsurance/brand.git",
