@@ -1,0 +1,5 @@
+/coverage
+yarn-error.log
+/.idea
+.DS_Store
+.travis.yml
