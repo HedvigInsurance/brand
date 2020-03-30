@@ -71,6 +71,7 @@ export const colorsV3 = {
   black: '#000000',
   white: '#ffffff',
   gray100: '#fafafa',
+  gray200: '#f2f2f2',
   gray300: '#eaeaea',
   gray500: '#aaaaaa',
   gray700: '#505050',
