@@ -77,5 +77,7 @@ export const colorsV3 = {
   gray700: '#505050',
   gray800: '#272727',
   gray900: '#121212',
-  purple500: '#8f7cf9',
+  purple300: '#c9abf5',
+  purple500: '#be9bf3',
+  purple700: '#875ec5',
 }
