@@ -84,4 +84,6 @@ export const colorsV3 = {
   purple300: '#c9abf5',
   purple500: '#be9bf3',
   purple700: '#875ec5',
+  red500: '#e24646',
+  red700: '#dd2727',
 }
