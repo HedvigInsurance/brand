@@ -1,4 +1,4 @@
-import { Fonts } from "./types";
+import { Fonts } from './types'
 
 const fonts: Fonts = {
   MERRIWEATHER: 'Merriweather',
@@ -8,7 +8,6 @@ const fonts: Fonts = {
   EB_GARAMOND: 'EB Garamond',
   FAVORIT: 'FavoritStd',
 }
-
 
 interface Flavor {
   flavorName: string
@@ -38,15 +37,18 @@ const fontFlavors: { [fontName: string]: Flavor[] } = {
     { flavorName: 'Medium', weight: 500, style: 'normal' },
   ],
   FavoritStd: [
-    { flavorName: 'Bold', weight: 600, style: 'normal'},
-    { flavorName: 'Book', weight: 400, style: 'normal'},
-    { flavorName: 'BookItalic', weight: 400, style: 'italic'},
+    { flavorName: 'Bold', weight: 600, style: 'normal' },
+    { flavorName: 'Book', weight: 400, style: 'normal' },
+    { flavorName: 'BookItalic', weight: 400, style: 'italic' },
   ],
 }
 
-const getCdnFontFaces = () => Object.keys(fontFlavors).map((fontName) =>
-  fontFlavors[fontName].map(
-    (flavour) => `
+const getCdnFontFaces = () =>
+  Object.keys(fontFlavors)
+    .map((fontName) =>
+      fontFlavors[fontName]
+        .map(
+          (flavour) => `
   @font-face {
     font-family: "${fontName}";
     font-style: ${flavour.style};
@@ -57,9 +59,9 @@ const getCdnFontFaces = () => Object.keys(fontFlavors).map((fontName) =>
     ;
   }
 `,
-  )
-  .join('\n'),
-)
-.join('\n')
+        )
+        .join('\n'),
+    )
+    .join('\n')
 
 export { fonts, getCdnFontFaces }
