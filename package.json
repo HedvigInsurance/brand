@@ -8,6 +8,24 @@
   "author": "Sam Pettersson <sam@hedvig.com>",
   "license": "AGPL-3.0",
   "private": false,
+  "scripts": {
+    "prepublishOnly": "rm -rf dist && tsc",
+    "storybook": "start-storybook -p 6006 --no-dll",
+    "build-storybook": "build-storybook --no-dll",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "build": "tsc && tsc -P ./tsconfig.esm.json"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,json}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@emotion/core": "^10.1.1",
@@ -25,6 +43,8 @@
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.6",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.1",
     "prettier": "^2.1.2",
     "pretty-quick": "^3.1.0",
     "react": "^17.0.1",
@@ -32,14 +52,6 @@
     "react-is": "^17.0.1",
     "typescript": "^4.0.5"
   },
-  "scripts": {
-    "prepublishOnly": "rm -rf dist && tsc",
-    "storybook": "start-storybook -p 6006 --no-dll",
-    "build-storybook": "build-storybook --no-dll",
-    "lint": "eslint 'src/**/*.{ts,tsx}'",
-    "build": "tsc && tsc -P ./tsconfig.esm.json"
-  },
-  "dependencies": {},
   "peerDependencies": {
     "@emotion/core": "^10.1.1",
     "@emotion/styled": "^10.0.27",
