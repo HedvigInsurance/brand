@@ -2,15 +2,17 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
+    "jsx": "react",
     "declaration": true,
     "outDir": "./dist",
     "strict": true,
     "skipLibCheck": true,
     "rootDirs": ["./dist"],
-    "rootDir": ".",
+    "rootDir": "./src",
     "baseUrl": "./dist",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "esModuleInterop": true
   },
-  "include": ["."],
+  "include": ["./src"],
   "exclude": ["./node_modules", "./dist"]
 }
