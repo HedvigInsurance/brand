@@ -81,9 +81,11 @@ export const colorsV3 = {
   canary: '#fdfd54',
   pistachio500: '#e9fce7',
   pistachio700: '#b6f4af',
+  purple100: '#e6d6ff',
   purple300: '#c9abf5',
   purple500: '#be9bf3',
   purple700: '#875ec5',
+  purple900: '#2b203b',
   red500: '#e24646',
   red700: '#dd2727',
 }
