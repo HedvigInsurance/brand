@@ -9,7 +9,7 @@
   "license": "AGPL-3.0",
   "private": false,
   "scripts": {
-    "prepublishOnly": "rm -rf dist && tsc",
+    "prepublishOnly": "yarn build",
     "storybook": "start-storybook -p 6006 --no-dll",
     "build-storybook": "build-storybook --no-dll",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
