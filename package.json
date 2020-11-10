@@ -1,6 +1,6 @@
 {
   "name": "@hedviginsurance/brand",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "The hedvig brand package",
   "main": "dist/index.js",
   "module": "dist/es/index.js",
