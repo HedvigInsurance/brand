@@ -1,0 +1,95 @@
+# More examples of Codefresh YAML can be found at
+# https://codefresh.io/docs/docs/yaml-examples/examples/
+
+version: "1.0"
+stages:
+  - "clone"
+  - "install"
+  - "checks"
+  - "publish"
+
+steps:
+  clone:
+    title: "Cloning repository"
+    type: "git-clone"
+    repo: "HedvigInsurance/brand"
+    revision: "${{CF_BRANCH}}"
+    git: "github"
+    stage: "clone"
+
+  install:
+    title: "Install dependencies"
+    type: "freestyle"
+    image: "node:12.19.0"
+    working_directory: "${{clone}}"
+    commands:
+      - yarn
+    stage: install
+
+  checks:
+    title: "Run tests"
+    type: "parallel" # Run any command
+    stage: "checks"
+
+    steps:
+      lint:
+        type: freestyle
+        image: "node:12.19.0"
+        working_directory: "${{clone}}"
+        commands:
+          - yarn lint
+      build:
+        type: freestyle
+        image: "node:12.19.0"
+        working_directory: "${{clone}}"
+        commands:
+          - yarn build
+
+  approve_publish:
+    title: Publish to NPM?
+    type: pending-approval
+    stage: publish
+    when:
+      condition:
+        all:
+          whenIsTag: '"${{BRANCH_TYPE}}" == "tag"'
+
+  clone_for_publish:
+    title: "Cloning repository"
+    type: "git-clone"
+    repo: "HedvigInsurance/brand"
+    revision: "${{CF_BRANCH}}"
+    git: "github"
+    stage: "publish"
+    when:
+      steps:
+        - name: approve_publish
+          on:
+            - approved
+
+  publish:
+    title: "Publish package"
+    type: "freestyle"
+    stage: "publish"
+    image: "node:12.19.0"
+    working_directory: "${{clone}}"
+    commands:
+      - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > ./.npmrc
+      - yarn install
+      - yarn publish --non-interactive
+    when:
+      condition:
+        all:
+          succeded: clone_for_publish.result == 'success'
+
+  notify_slack:
+    title: "Notify on Slack"
+    type: "slack-notifier"
+    stage: "publish"
+    arguments:
+      SLACK_HOOK_URL: '${{SLACK_NOTIFICATION_WEBHOOK}}'
+      SLACK_TEXT: "@hedviginsurance/brand@${{CF_BRANCH}} published to NPM"
+    when:
+      condition:
+        all:
+          succeded: publish.result == 'success'
