@@ -52,6 +52,7 @@ export const globalStyles = css`
 export const globalStylesStorybook = css`
   ${globalStyles}
   body {
+    padding: inherit;
     background-color: transparent;
   }
 `

@@ -7,6 +7,18 @@ export default {
   title: 'Brand/Logotypes/Hedvig Symbol',
 }
 
-export const Default: React.FC = () => {
+export const Black = () => {
   return <HedvigSymbol color={colorsV3.gray900} />
+}
+
+Black.parameters = {
+  backgrounds: { default: 'gray100' },
+}
+
+export const White = () => {
+  return <HedvigSymbol color={colorsV3.gray100} />
+}
+
+White.parameters = {
+  backgrounds: { default: 'gray900' },
 }
